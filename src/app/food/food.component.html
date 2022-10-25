@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+        <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date de préparation</th> </tr>
+    </thead>
+    <tbody *ngFor="let food of food">
+    
+    <tr>
+    <td>{{food.idfood}}</td>
+    <td>{{food.nomfood}}</td>
+    <td>{{food.prixfood}}</td>
+    <td>{{food.dateCreation | date:'dd/MM/yyyy'}}</td>
+    <td><a class="btn btn-danger" (click)="supprimerfood(food)">Supprimer</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updatefood',food.idfood]">Modifier</a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
